@@ -1,0 +1,28 @@
+﻿@Html.Partial("Header")
+<section id="main" class="wrapper">
+    <section class="posts">
+        @foreach (var post in @Model.postList)
+        {
+            <article class="post">
+                <div class="content">
+                    <h2 class="t"><a href="/post/@post.Slug">@post.Title</a></h2>
+                    <div class="meta"><time>@(((DateTime)post.Created).ToString("D"))</time></div>
+                    <div class="entry">
+                        @Html.Raw(@post.Content)
+                    </div>
+                </div>
+            </article>
+        }
+    </section>
+    <div class="navigation">
+        @if (@Model.hasPrevious)
+        {
+            <div class="alignleft"><a href="/page/@(((int)Model.currentPage) - 1)">« Previous Entries</a></div>
+        }
+        @if (@Model.hasNext)
+        {
+            <div class="alignright"><a href="/page/@(((int)Model.currentPage) + 1)">Next Entries »</a></div>
+        }
+    </div>
+</section>
+@Html.Partial("Footer")

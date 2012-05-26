@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Users\willerce\Desktop\Willog" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/MarkdownSharp.xml" publishTime="05/20/2012 22:48:05" />
+    <file relUrl="bin/System.Web.Extensions.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Assets/Theme/Images/logo.png" publishTime="05/26/2012 17:16:12" />
+    <file relUrl="Views/Admin/PostEdit.cshtml" publishTime="05/26/2012 18:13:28" />
+    <file relUrl="Assets/Lib/Prettify/prettify.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="bin/Nancy.Hosting.Aspnet.dll" publishTime="05/20/2012 23:26:24" />
+    <file relUrl="Assets/Theme/Style.css" publishTime="05/26/2012 20:59:08" />
+    <file relUrl="Assets/Lib/Prettify/lang-apollo.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="Assets/Lib/Prettify/lang-lisp.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="Assets/Lib/Prettify/lang-xq.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="Assets/Lib/Prettify/lang-proto.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="Assets/Lib/Prettify/lang-lua.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="Assets/Lib/Prettify/lang-scala.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="Assets/Lib/Prettify/lang-vb.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="bin/Nancy.dll" publishTime="05/20/2012 22:48:00" />
+    <file relUrl="Web.config" publishTime="05/26/2012 21:27:22" />
+    <file relUrl="bin/Simple.Data.Mysql.Mysql40.dll" publishTime="05/20/2012 23:11:13" />
+    <file relUrl="bin/System.Web.DynamicData.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Assets/Lib/Prettify/lang-hs.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="Assets/Lib/Prettify/lang-css.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="bin/MySql.Data.dll" publishTime="05/20/2012 23:12:03" />
+    <file relUrl="Assets/Lib/Prettify/prettify.css" publishTime="05/26/2012 16:42:29" />
+    <file relUrl="Views/Admin/PostHome.cshtml" publishTime="05/26/2012 14:06:22" />
+    <file relUrl="Assets/Lib/Prettify/lang-clj.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="Assets/Lib/Prettify/lang-vhdl.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="Assets/Lib/Prettify/lang-tex.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="bin/Willog.pdb" publishTime="05/26/2012 21:26:04" />
+    <file relUrl="Assets/Admin/Style.css" publishTime="05/21/2012 01:20:27" />
+    <file relUrl="Assets/Lib/Prettify/lang-go.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="Assets/Admin/Images/bg.gif" publishTime="05/20/2012 23:19:44" />
+    <file relUrl="Views/Admin/PostAdd.cshtml" publishTime="05/26/2012 18:13:21" />
+    <file relUrl="Views/Header.cshtml" publishTime="05/26/2012 17:16:25" />
+    <file relUrl="Views/Post.cshtml" publishTime="05/26/2012 20:59:18" />
+    <file relUrl="Views/Footer.cshtml" publishTime="05/26/2012 20:51:44" />
+    <file relUrl="bin/MarkdownSharp.pdb" publishTime="05/20/2012 22:48:05" />
+    <file relUrl="bin/Simple.Data.dll" publishTime="05/20/2012 23:11:13" />
+    <file relUrl="bin/System.Web.ApplicationServices.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Assets/Lib/Prettify/lang-yaml.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="Views/Home.cshtml" publishTime="05/26/2012 21:03:09" />
+    <file relUrl="Assets/Lib/Prettify/lang-n.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="Assets/Theme/Images/footersub.png" publishTime="05/26/2012 20:52:14" />
+    <file relUrl="Views/Admin/Footer.cshtml" publishTime="05/21/2012 00:07:44" />
+    <file relUrl="bin/Nancy.ViewEngines.Razor.dll" publishTime="05/20/2012 23:36:13" />
+    <file relUrl="bin/Simple.Data.Ado.dll" publishTime="05/20/2012 23:11:13" />
+    <file relUrl="bin/MarkdownSharp.dll" publishTime="05/20/2012 22:48:05" />
+    <file relUrl="Assets/Lib/Prettify/lang-ml.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="Assets/Lib/Prettify/lang-wiki.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="bin/System.Web.Entity.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="Assets/Lib/Prettify/lang-sql.js" publishTime="05/26/2012 16:37:48" />
+    <file relUrl="bin/Willog.dll" publishTime="05/26/2012 21:26:04" />
+  </publishProfile>
+</publishData>

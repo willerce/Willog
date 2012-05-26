@@ -1,0 +1,57 @@
+﻿@Html.Partial("Admin/Header")
+<div class="content" id="content">
+    <div class="container">
+        <form method="Post">
+            <ul class="fields">
+                <li class="field hide">
+                    <label class="field-header"><span>编号</span></label>
+                    <div class="field-content">
+                        <p>
+                            <input type="text" class="inputfield-maxwidth" name="id" value="@Model.Id"/>
+                        </p>
+                    </div>
+                </li>
+                <li class="field">
+                    <label class="field-header"><span>别名</span></label>
+                    <div class="field-content">
+                        <p>
+                            <input type="text" class="inputfield-maxwidth" name="slug" value="" />
+                        </p>
+                    </div>
+                </li>
+                <li class="field">
+                    <label class="field-header"><span>标题</span></label>
+                    <div class="field-content">
+                        <p>
+                            <input type="text" class="inputfield-maxwidth" name="title" value="@Model.Title"/>
+                        </p>
+                    </div>
+                </li>
+                <li class="field">
+                    <label class="field-header"><span>日期</span></label>
+                    <div class="field-content">
+                        <p>
+                            <input type="text" class="inputfield-maxwidth" name="created" value='@Convert.ToDateTime(Model.Created).ToString("yyyy-MM-dd hh:mm")' />
+                        </p>
+                    </div>
+                </li>
+                <li class="field">
+                    <label class="field-header"><span>内容</span></label>
+                    <div class="field-content">
+                        <p>
+                            <textarea class="large" name="content">@Model.Content</textarea>
+                        </p>
+                    </div>
+                </li>
+                <ul class="do">
+                    <li id="do_submit_publish" class="do-publish">
+                        <div class="do-content">
+                            <button type="submit" value="Publish" class="submit-publish button"><span class="button-text">保存</span></button>
+                        </div>
+                    </li>
+                </ul>
+            </ul>
+        </form>
+    </div>
+</div>
+@Html.Partial("Admin/Footer")
