@@ -121,6 +121,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="install.sql" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
