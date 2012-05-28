@@ -136,15 +136,13 @@
     <Compile Include="Services\IDBFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Admin\Footer.cshtml" />
     <Content Include="Views\Admin\PostAdd.cshtml" />
     <Content Include="Views\Admin\PostEdit.cshtml" />
-    <None Include="Views\Admin\Header.cshtml" />
     <Content Include="Views\Admin\PostHome.cshtml" />
     <Content Include="Views\Home.cshtml" />
-    <Content Include="Views\Header.cshtml" />
-    <Content Include="Views\Footer.cshtml" />
     <Content Include="Views\Post.cshtml" />
+    <Content Include="Views\Admin\Layout.cshtml" />
+    <None Include="Views\Layout.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

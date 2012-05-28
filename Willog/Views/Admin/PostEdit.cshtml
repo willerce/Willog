@@ -1,4 +1,6 @@
-﻿@Html.Partial("Admin/Header")
+﻿@{
+    Layout = "Admin/Layout.cshtml";
+}
 <div class="content" id="content">
     <div class="container">
         <form method="Post">
@@ -12,18 +14,18 @@
                     </div>
                 </li>
                 <li class="field">
-                    <label class="field-header"><span>别名</span></label>
-                    <div class="field-content">
-                        <p>
-                            <input type="text" class="inputfield-maxwidth" name="slug" value="" />
-                        </p>
-                    </div>
-                </li>
-                <li class="field">
                     <label class="field-header"><span>标题</span></label>
                     <div class="field-content">
                         <p>
                             <input type="text" class="inputfield-maxwidth" name="title" value="@Model.Title"/>
+                        </p>
+                    </div>
+                </li>
+                <li class="field">
+                    <label class="field-header"><span>别名</span></label>
+                    <div class="field-content">
+                        <p>
+                            <input type="text" class="inputfield-maxwidth" name="slug" value="@Model.Slug" />
                         </p>
                     </div>
                 </li>
@@ -54,4 +56,3 @@
         </form>
     </div>
 </div>
-@Html.Partial("Admin/Footer")

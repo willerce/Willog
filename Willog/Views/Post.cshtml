@@ -1,4 +1,7 @@
-﻿@Html.Partial("Header")
+﻿@{
+    Layout = "Layout.cshtml";
+}
+@section Title{@Model.Title - 未志}
 <section id="main" class="wrapper">
     <article id="post-entry" class="post">
         <div class="content">
@@ -24,4 +27,3 @@
         </div>
     </article>
 </section>
-@Html.Partial("Footer")

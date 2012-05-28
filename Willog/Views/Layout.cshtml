@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="robots" content="noindex, nofollow" />
-    <title>未志</title>
+    <title>@RenderSection("Title", false)</title>
     <link href="/assets/theme/style.css" rel="stylesheet" type="text/css" />
     <link href="/assets/lib/prettify/prettify.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="/assets/lib/prettify/prettify.js"></script>
@@ -18,11 +18,24 @@
             </a>
             <nav>
                 <ul class="grid_7 alpha" id="global-nav">
+                    <!--<li><a class="smooth-transition" href="/">ABOUT</a></li>
                     <li><a class="smooth-transition" href="/">ABOUT</a></li>
                     <li><a class="smooth-transition" href="/">ABOUT</a></li>
-                    <li><a class="smooth-transition" href="/">ABOUT</a></li>
-                    <li><a class="smooth-transition" href="/">ABOUT</a></li>
+                    <li><a class="smooth-transition" href="/">ABOUT</a></li>-->
                 </ul>
             </nav>       		        		
         </div>
     </header>
+    @RenderBody()
+    <footer id="main-footer">
+        <p class="wrapper">Prower By willerce, Thanks Visual Studio 2010, Nancy and Simple.Data</p>
+    </footer>
+</div>
+<script>
+$(window).load(function(){
+     $("code").addClass("prettyprint");
+     prettyPrint();
+})
+</script>
+</body>
+</html>
