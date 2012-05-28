@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Nancy;
 using Nancy.ModelBinding;
+using Nancy.Security;
 using Simple.Data;
 using Willog.Models;
 using Willog.Services;
@@ -12,6 +13,13 @@ namespace Willog.Module
     {
         public AdminModule(IDBFactory dbFactory) : base(dbFactory,"/admin")
         {
+            this.RequiresAuthentication();
+
+            Get["/"] = _ =>
+            {
+                return View["AdminHome"];
+            };
+
             Get["/post"] = _ =>
             {
                 var posts = DB.Post.All().OrderByCreatedDescending();

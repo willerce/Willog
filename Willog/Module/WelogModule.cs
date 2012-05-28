@@ -11,6 +11,10 @@ namespace Willog.Module
         {
         }
 
+        public WillogModule(string modulePath) : base(modulePath)
+        {
+        }
+
         public WillogModule(IDBFactory dbFactory)
         {
             DB = dbFactory.DB();

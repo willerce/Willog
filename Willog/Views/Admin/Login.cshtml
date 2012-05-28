@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "Admin/Layout.cshtml";
+}
+<div class="login content" id="content">
+    <div class="container">
+        <form method="POST">
+            <div class="item">
+                <label for="username">Username</label>
+                <input type="text" name="username" />
+            </div>
+            <div class="item">
+                <label for="password">Password</label>
+                <input name="password" type="password" />
+            </div>
+            <div class="item remember-item">
+                <label>&nbsp;</label>
+                <p>
+                    <input name="RememberMe" type="checkbox" value="true" class="remember"/>
+                    <label for="checkbox" class="remember">Remember Me</label>
+                </p>
+            </div>
+            <div class="item">
+                <label>&nbsp;</label>
+                <input type="submit" value="Login" />
+            </div>
+        </form>
+        @if (Model.Errored) {
+            <div id="errorBox" class="floatingError">Invalid Username or Password</div>
+        }
+    </div>
+</div>

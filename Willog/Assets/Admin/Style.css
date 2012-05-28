@@ -10,7 +10,7 @@ abbr, acronym { border: 0; }
 a { text-decoration: none; }
 
 /* input */
-textarea, input:not([type="checkbox"]):not([type="radio"]):not([type="file"]) { border: 1px solid #CECECE; border-radius: 2px ; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.2); outline: medium none; padding: 3px; }
+textarea, input:not([type="checkbox"]):not([type="radio"]):not([type="file"]) { border: 1px solid #CECECE; border-radius: 2px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.2); outline: medium none; padding: 3px; }
 input[type="submit"], input[type="submit"]:hover { box-shadow: 0 0 0 transparent !important; }
 textarea:hover, input:hover:not([type="checkbox"]):not([type="radio"]):not([type="file"]) { border: 1px solid #BDBDBD; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(255, 255, 255, 0.2); }
 textarea:focus, input:focus:not([type="checkbox"]):not([type="radio"]):not([type="file"]) { border: 1px solid #95BDD4; box-shadow: 0 2px 3px rgba(161, 202, 226, 0.5) inset, 0 1px 0 rgba(255, 255, 255, 0.2); }
@@ -22,11 +22,11 @@ body { background: #E4EBEE; color: #2F4248; font-size: 12px; font-family: "Micro
 .content p, .content ul .content ol, .content table { margin: 1em 0; }
 .container { margin: 0 auto; position: relative; width: 900px; overflow: hidden; }
 /*font-family*/
-input ,textarea,button{ font-family:"Microsoft Yahei";}
+input, textarea, button { font-family: "Microsoft Yahei"; }
 
 
 /* h*/
-#masthead { background: -moz-linear-gradient(center top , #4E676E 0%, #32464C 100%) repeat; height: 77px; overflow: hidden; }
+#masthead { background: -moz-linear-gradient(center top , #4E676E 0%, #32464C 100%) repeat;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4E676E), color-stop(100%,#32464C));  height: 77px; overflow: hidden; }
 #logo { display: none; }
 #topnav li { float: left; }
 #topnav a { background-position: 10px 12px; background-repeat: no-repeat; color: #A7E5F9; display: block; float: left; font-size: 12px; height: 41px; line-height: 38px; margin: 0 0 0 1px; padding: 0 10px; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6); text-transform: none; }
@@ -40,27 +40,35 @@ a.nav, .nav a { font-weight: bold; text-transform: uppercase; }
 /* content */
 .fields { }
 .field { margin-bottom: 10px; }
-.field.hide { display: none;}
+.field.hide { display: none; }
 .field label { display: block; font-size: 12px; padding: 0.25em 0 0.25em 1em; }
-.field label span {text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
+.field label span { text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
 .field-header { background: -moz-linear-gradient(center top , #EDEDED, #C4C4C4) repeat scroll 0 0 transparent; border: 1px solid #B6B6B6; color: #4F4F4F; font-weight: bold; }
 .field-content { padding: 1em; background: #FFFFFF; border: 1px solid #B6B6B6; color: #4F4F4F; }
 .field-content textarea, .inputfield-maxwidth { width: 99%; }
-.field-content textarea.large { height: 500px;line-height: 1.6em;padding: 3px 5px;}
-.field-content input ,.field-content textarea,.field-content button{ font-size: 14px;color: #333;}
+.field-content textarea.large { height: 500px; line-height: 1.6em; padding: 3px 5px; }
+.field-content input, .field-content textarea, .field-content button { font-size: 14px; color: #333; }
 .field-content > p { margin-top: 0; }
-.button { padding: 3px 9px; cursor: pointer; display: inline-block; margin-right: 0.1em; overflow: visible; text-align: center; text-decoration: none !important; border-radius: 3px; background: -moz-linear-gradient(center top , #EDEDED, #C4C4C4) repeat; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset; border: 1px solid #B6B6B6; color: #4F4F4F; }
-.button.right { float: right;}
+.button { padding: 3px 9px; cursor: pointer; display: inline-block; margin-right: 0.1em; overflow: visible; text-align: center; text-decoration: none !important; border-radius: 3px; background: -moz-linear-gradient(center top , #EDEDED, #C4C4C4) repeat;background: -webkit-gradient(linear,left bottom,left top,color-stop(1, rgb(185,224,245)),color-stop(0, rgb(146,189,214))) repeat; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset; border: 1px solid #B6B6B6; color: #4F4F4F; }
+.button.right { float: right; }
 .button:hover { box-shadow: 0 0 8px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255,255,255,0.8) inset; }
 .button-text { display: block; font-size: 14px; font-weight: bold; line-height: 1.4; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6); }
 
-.shortcut-do { margin-bottom: 15px;overflow: hidden;}
-.post-list li { border-bottom: 1px dashed #ccc;line-height: 3em;font-size: 15px;padding-left: 10px;background: #F5F8Fa; }
-.post-list li:nth-child(2n) { background: #fff;}
-.post-list li strong { margin-right: 10px;}
-.post-list li a { color: #005F7D;}
-.post-list li a:hover { text-decoration: underline;}
-.post-list li .do { float: right;margin-right: 10px;}
+.shortcut-do { margin-bottom: 15px; overflow: hidden; }
+.post-list li { border-bottom: 1px dashed #ccc; line-height: 3em; font-size: 15px; padding-left: 10px; background: #F5F8Fa; }
+.post-list li:nth-child(2n) { background: #fff; }
+.post-list li strong { margin-right: 10px; }
+.post-list li a { color: #005F7D; }
+.post-list li a:hover { text-decoration: underline; }
+.post-list li .do { float: right; margin-right: 10px; }
+
+
+/* login */
+.login.content .item { margin: 15px 0;}
+.login.content label { display: inline-block; float: left; font-size: 13px; line-height: 30px; margin-right: 15px; text-align: right; vertical-align: baseline; width: 60px; }
+.login.content input.remember { display: inline-block;}
+.login.content label.remember { width: 100px;line-height: 1;float: none;}
+
 /* f*/
 #footer { color: #85AABA; margin: 2em 0; }
 #footer p { margin-top: 0; }

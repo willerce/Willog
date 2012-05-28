@@ -8,9 +8,9 @@ using Willog.Services;
 
 namespace Willog.Module
 {
-    public class RootModule : WillogModule
+    public class MainModule : WillogModule
     {
-        public RootModule(IDBFactory dbFactory) : base(dbFactory)
+        public MainModule(IDBFactory dbFactory) : base(dbFactory)
         {
             Get["/"] = _ =>
             {
