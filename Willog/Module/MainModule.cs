@@ -50,6 +50,14 @@ namespace Willog.Module
                 model.Content = new Markdown().Transform(model.Content);
                 return View["Post", model];
             };
+
+
+            Get[@"/(?<page>[a-z]+)"] = _ =>
+            {
+                var model = DB.Post.FindBySlugAndType(_.page,"page");
+                model.Content = new Markdown().Transform(model.Content);
+                return View["Page", model];
+            };
         }
         
         /// <summary>
@@ -64,7 +72,7 @@ namespace Willog.Module
             int skip = (page - 1) * take;
 
             
-            var postList = DB.Post.All().OrderByCreatedDescending().Skip(skip).Take(take); ;
+            var postList = DB.Post.FindAll(DB.Post.Type == "post").OrderByCreatedDescending().Skip(skip).Take(take); ;
             postList = postList.ToList<Post>();
             var markdown = new Markdown();
             foreach (var post in postList)

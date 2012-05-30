@@ -115,7 +115,9 @@
     <Content Include="Assets\Theme\Images\footersub.png" />
     <Content Include="Assets\Theme\Images\logo.png" />
     <Content Include="Assets\Theme\Style.css" />
+    <Content Include="robots.txt" />
     <Content Include="Views\Admin\Layout.cshtml" />
+    <None Include="Views\Page.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -129,7 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserIdentity.cs" />

@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "Layout.cshtml";
+}
+@section Title{@Model.Title - 未志}
+<section id="main" class="wrapper">
+    <article id="post-entry" class="post">
+        <div class="content">
+            <h1 class="t">@Model.Title</h1>
+            <div class="entry">
+                @Html.Raw(Model.Content)
+            </div>
+        </div>
+    </article>
+</section>
