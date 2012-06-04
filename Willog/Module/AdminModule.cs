@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using Nancy;
 using Nancy.ModelBinding;
 using Nancy.Security;
@@ -22,9 +23,10 @@ namespace Willog.Module
 
             Get["/post"] = _ =>
             {
-                var posts = DB.Post.All().OrderByCreatedDescending();
-                List<Post> model = posts.ToList<Post>();
-                return View["PostHome",model];
+                var page = Request.Query.page;
+
+                var posts = GetPostList(Convert.ToInt32(page));
+                return View["PostHome", posts];
             };
 
             Get["/post/add"] = _ => View["PostAdd"];
@@ -82,6 +84,24 @@ namespace Willog.Module
 
                 return Response.AsRedirect("/");
             };
+        }
+
+        /// <summary>
+        /// Get Post List
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        public List<Post> GetPostList(int page)
+        {
+            int take = Convert.ToInt32(30);
+
+            int skip = (page - 1) * take;
+
+
+            var postList = DB.Post.FindAll(DB.Post.Type == "post").OrderByCreatedDescending().Skip(skip).Take(take); ;
+            postList = postList.ToList<Post>();
+
+            return postList;
         }
     }
 }
