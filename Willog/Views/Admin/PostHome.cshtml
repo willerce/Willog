@@ -9,7 +9,7 @@
             </li>
         </ul>
         <ul class="post-list">
-            @foreach (var post in @Model)
+            @foreach (var post in @Model.postList)
             {
                 <li>
                     <strong>[@post.Created.ToString("yyyy-MM-dd")]</strong><a href="/admin/post/edit?id=@post.Id">@post.Title</a>
@@ -20,5 +20,15 @@
                 </li>
             }
         </ul>
-    </div>
+        <div class="navigation">
+        @if (@Model.hasPrevious)
+        {
+            <div class="alignleft"><a href="/admin/post?page=@(((int)Model.currentPage) - 1)">« Previous Entries</a></div>
+        }
+        @if (@Model.hasNext)
+        {
+            <div class="alignright"><a href="/admin/post?page=@(((int)Model.currentPage) + 1)">Next Entries »</a></div>
+        }
+        </div>
+    </div>   
 </div>

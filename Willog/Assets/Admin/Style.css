@@ -7,7 +7,7 @@ caption, th { text-align: left; }
 h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
 q:before, q:after { content: ''; }
 abbr, acronym { border: 0; }
-a { text-decoration: none; }
+a { text-decoration: none;color: #005F7D;}
 
 /* input */
 textarea, input:not([type="checkbox"]):not([type="radio"]):not([type="file"]) { border: 1px solid #CECECE; border-radius: 2px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.2); outline: medium none; padding: 3px; }
@@ -61,6 +61,10 @@ a.nav, .nav a { font-weight: bold; text-transform: uppercase; }
 .post-list li a { color: #005F7D; }
 .post-list li a:hover { text-decoration: underline; }
 .post-list li .do { float: right; margin-right: 10px; }
+
+.navigation { border-bottom: medium none; clear: both; display: block; padding:35px 0 20px; text-align: center; width: 100%;font-size: 14px; }
+.navigation .alignleft { float: left; }
+.navigation .alignright { float: right; }
 
 
 /* login */

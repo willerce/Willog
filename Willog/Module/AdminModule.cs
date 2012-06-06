@@ -23,10 +23,18 @@ namespace Willog.Module
 
             Get["/post"] = _ =>
             {
-                var page = Request.Query.page;
+                var page = Request.Query.page ?? 1;
+                var postList = GetPostList((int)page);
 
-                var posts = GetPostList(Convert.ToInt32(page));
-                return View["PostHome", posts];
+                dynamic model = new
+                {
+                    postList,
+                    currentPage = page,
+                    hasNext = true,
+                    hasPrevious = (int)page > 1
+                };
+
+                return View["PostHome", model];
             };
 
             Get["/post/add"] = _ => View["PostAdd"];
@@ -57,7 +65,8 @@ namespace Willog.Module
                 return Response.AsRedirect("/admin/post");
             };
 
-
+            #region Convert Wp to willog
+            /* 
             Get["/convert"] = _ =>
             {
 
@@ -83,7 +92,8 @@ namespace Willog.Module
                 }
 
                 return Response.AsRedirect("/");
-            };
+            };*/
+            #endregion
         }
 
         /// <summary>
@@ -93,6 +103,8 @@ namespace Willog.Module
         /// <returns></returns>
         public List<Post> GetPostList(int page)
         {
+            if (page == 0)
+                page = 1;
             int take = Convert.ToInt32(30);
 
             int skip = (page - 1) * take;
