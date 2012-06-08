@@ -5,16 +5,16 @@
     <div class="container">
         <ul class="shortcut-do">
             <li id="do_add_post">
-                <a type="button" class="button" href="/admin/post/add"><span class="button-text">写日志</span></a>
+                <a type="button" class="button" href="/admin/post/add?type=@Model.type"><span class="button-text">New Entries</span></a>
             </li>
         </ul>
         <ul class="post-list">
             @foreach (var post in @Model.postList)
             {
                 <li>
-                    <strong>[@post.Created.ToString("yyyy-MM-dd")]</strong><a href="/admin/post/edit?id=@post.Id">@post.Title</a>
+                    <strong>[@post.Created.ToString("yyyy-MM-dd")]</strong><a href="/admin/post/edit/@post.Id?type=@Model.type">@post.Title</a>
                     <div class="do">
-                        <a href="/admin/post/edit/@post.Id">编辑</a>
+                        <a href="/admin/post/edit/@post.Id?type=@Model.type">编辑</a>
                         <a href="/admin/post/del/@post.Id">删除</a>
                     </div>
                 </li>
