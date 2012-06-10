@@ -118,7 +118,6 @@
     <Content Include="Assets\Lib\Prettify\prettify.js" />
     <Content Include="Assets\Theme\Images\footersub.png" />
     <Content Include="Assets\Theme\Images\header.png" />
-    <Content Include="Assets\Theme\Images\logo.png" />
     <Content Include="Assets\Theme\Images\tile.gif" />
     <Content Include="Assets\Theme\Style.css" />
     <Content Include="robots.txt" />
