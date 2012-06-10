@@ -2,29 +2,63 @@
     Layout = "Layout.cshtml";
 }
 @section Title{未志}
-<section id="main" class="wrapper">
-    <section class="posts">
-        @foreach (var post in @Model.postList)
-        {
-            <article class="post">
-                <div class="content">
-                    <h2 class="t"><a href="/post/@post.Slug">@post.Title</a></h2>
-                    <div class="meta"><time>@(((DateTime)post.Created).ToString("D"))</time></div>
-                    <div class="entry">
-                        @Html.Raw(@post.Content)
-                    </div>
-                </div>
-            </article>
-        }
-    </section>
-    <div class="navigation">
-        @if (@Model.hasPrevious)
-        {
-            <div class="alignleft"><a href="/page/@(((int)Model.currentPage) - 1)">« Previous Entries</a></div>
-        }
-        @if (@Model.hasNext)
-        {
-            <div class="alignright"><a href="/page/@(((int)Model.currentPage) + 1)">Next Entries »</a></div>
-        }
-    </div>
-</section>
+<div id="main" class="wrapper">
+	<div class="container">
+		<section class="posts">
+			@foreach (var post in @Model.postList)
+			{
+				<article class="post block">
+					<div class="content">
+						<h2 class="t"><a href="/post/@post.Slug">@post.Title</a></h2>
+						<div class="meta"><time>@(((DateTime)post.Created).ToString("D"))</time></div>
+						<div class="entry">
+							@Html.Raw(@post.Content)
+						</div>
+					</div>
+				</article>
+			}
+		</section>
+		<div class="navigation block">
+			<table width="100%">
+				<tbody>
+					<tr>
+						<td width="120" align="left">
+						@if (@Model.hasPrevious)
+						{
+							<div class="alignleft"><a href="/page/@(((int)Model.currentPage) - 1)">« Previous Entries</a></div>
+						}
+						</td>
+						<td width="auto" align="center"><strong class="fade">@((int)Model.currentPage)/1990</strong></td>
+						<td width="120" align="right">
+						@if (@Model.hasNext)
+						{
+							<div class="alignright"><a href="/page/@(((int)Model.currentPage) + 1)">Next Entries »</a></div>
+						}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="sidebar">
+		<div class="widget block">
+			<strong class="wt">About Me</strong>
+			<div class="wc">
+			xxx
+			</div>
+		</div>
+		<div class="widget block">
+			<strong class="wt">Random Articles</strong>
+			<div class="wc">
+			xxx
+			</div>
+		</div>
+		<div class="widget block">
+			<strong class="wt">Featured Articles</strong>
+			<div class="wc">
+			xxx
+			</div>
+		</div>
+	</div>
+</div>
+

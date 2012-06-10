@@ -10,22 +10,23 @@
     <div id="global-container">
         <header id="main-header">
             <div class="wrapper">
-                <a title="未志" href="/" id="logo">
-                    <img width="109" height="30" alt="Logo" src="/assets/theme/images/logo.png" />
-                </a>
+                <a title="未志" href="/" id="logo">未志</a>
                 <nav>
                     <ul class="grid_7 alpha" id="global-nav">
-                        <li><a class="smooth-transition" href="/about">About</a></li>
-                        <li><a class="smooth-transition" href="/links">Links</a></li>
-                        <li><a class="smooth-transition" target="_blank" href="http://twitter.com/willerce">Twitter</a></li>
-                        <li><a class="smooth-transition" target="_blank" href="http://weibo.com/willerce">Weibo</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/links">Links</a></li>
+                        <li><a target="_blank" href="http://twitter.com/willerce">Twitter</a></li>
+                        <li><a target="_blank" href="http://weibo.com/willerce">Weibo</a></li>
                     </ul>
                 </nav>       		        		
             </div>
         </header>
         @RenderBody()
         <footer id="main-footer">
-            <p class="wrapper">Prower By willerce, Thanks Visual Studio 2010, Nancy and Simple.Data</p>
+            <div class="wrapper">
+				<p>Prower By willerce</p>
+				<p>Thanks Visual Studio , Nancy and Simple.Data</p>
+			</div>
         </footer>
     </div>
     <script type="text/javascript" src="/assets/lib/prettify/prettify.js"></script>

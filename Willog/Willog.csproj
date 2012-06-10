@@ -20,6 +20,10 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -46,7 +51,8 @@
     <Reference Include="MySql.Data">
       <HintPath>..\packages\MySql.Data.6.5.4\lib\net40\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Nancy">
+    <Reference Include="Nancy, Version=0.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Nancy.0.11.0\lib\net40\Nancy.dll</HintPath>
     </Reference>
     <Reference Include="Nancy.Authentication.Forms">
@@ -77,9 +83,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions">
       <Private>True</Private>
     </Reference>
@@ -87,13 +90,8 @@
       <Private>False</Private>
       <HintPath>..\packages\Nancy.Viewengines.Razor.0.11.0\lib\net40\System.Web.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Admin\Images\bg.gif" />
@@ -119,11 +117,13 @@
     <Content Include="Assets\Lib\Prettify\prettify.css" />
     <Content Include="Assets\Lib\Prettify\prettify.js" />
     <Content Include="Assets\Theme\Images\footersub.png" />
+    <Content Include="Assets\Theme\Images\header.png" />
     <Content Include="Assets\Theme\Images\logo.png" />
+    <Content Include="Assets\Theme\Images\tile.gif" />
     <Content Include="Assets\Theme\Style.css" />
     <Content Include="robots.txt" />
     <Content Include="Views\Admin\Layout.cshtml" />
-    <None Include="Views\Page.cshtml" />
+    <None Include="Properties\PublishProfiles\FileSystem-Desktop.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -134,6 +134,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="install.sql" />
+    <Content Include="Views\Page.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Admin\AdminHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
@@ -148,7 +152,6 @@
     <Compile Include="Services\DBFactory.cs" />
     <Compile Include="Services\IDBFactory.cs" />
     <Compile Include="Services\UserMapper.cs" />
-    <None Include="Views\Admin\AdminHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Admin\PostAdd.cshtml" />
@@ -176,7 +179,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1939</DevelopmentServerPort>
+          <DevelopmentServerPort>16726</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:6369/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

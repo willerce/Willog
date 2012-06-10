@@ -2,20 +2,30 @@
     Layout = "Layout.cshtml";
 }
 @section Title{@Model.Title - 未志}
-<section id="main" class="wrapper">
-    <article id="post-entry" class="post">
-        <div class="content">
-            <h1 class="t">@Model.Title</h1>
-            <div class="meta"><time>@Model.Created.ToString("D")</time></div>
-            <div class="entry">
-                @Html.Raw(Model.Content)
-            </div>
-        </div>
-        <div id="comments">
-            <div id="disqus_thread"></div>
-        </div>
-    </article>
-</section>
+<div id="main" class="wrapper">
+	<div class="container">
+		<article id="post-entry" class="post block">
+			<div class="content">
+				<h1 class="t">@Model.Title</h1>
+				<div class="meta"><time>@Model.Created.ToString("D")</time></div>
+				<div class="entry">
+					@Html.Raw(Model.Content)
+				</div>
+			</div>
+			<div id="comments">
+				<div id="disqus_thread"></div>
+			</div>
+		</article>
+	</div>
+	<div class="sidebar">
+		<div class="widget block">
+			<strong class="wt">About This Post</strong>
+			<div class="wc">
+			xxx
+			</div>
+		</div>
+	</div>
+</div>
 <script type="text/javascript">
     (function () {
         var dsq = document.createElement('script');

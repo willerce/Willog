@@ -38,7 +38,7 @@ namespace Willog.Module
                     postList,
                     currentPage = _.id,
                     hasNext = true,
-                    hasPrevious = true,
+                    hasPrevious = page > 1,
                 };
 
                 return View["Home", model];
