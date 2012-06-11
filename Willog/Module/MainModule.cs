@@ -14,14 +14,17 @@ namespace Willog.Module
         {
             Get["/"] = _ =>
             {
-                var postList = GetPostList(1);
+                int take = Convert.ToInt32(ConfigurationManager.AppSettings["PostNum"]);
+                var postList = GetPostList(1,take);
 
+                var maxPage = DB.Post.All().ToList().Count / take;
                 dynamic model = new
                 {
                     postList = (dynamic) postList,
                     currentPage =(dynamic) 1,
-                    hasNext = true,
+                    hasNext = maxPage > 1,
                     hasPrevious = false,
+                    maxPage = maxPage
                 };
 
                 return View["Home", model];
@@ -29,16 +32,19 @@ namespace Willog.Module
 
             Get[@"/page/(?<id>[\d]{1,2})"] = _ =>
             {
+                int take = Convert.ToInt32(ConfigurationManager.AppSettings["PostNum"]);
                 int page = (int) _.id;
 
-                var postList = GetPostList(page);
+                var postList = GetPostList(page, take);
+                var maxPage = DB.Post.All().ToList().Count / take;
 
                 dynamic model = new
                 {
                     postList,
                     currentPage = _.id,
-                    hasNext = true,
+                    hasNext = page < maxPage,
                     hasPrevious = page > 1,
+                    maxPage = maxPage
                 };
 
                 return View["Home", model];
@@ -65,10 +71,8 @@ namespace Willog.Module
         /// </summary>
         /// <param name="page"></param>
         /// <returns></returns>
-        public List<Post> GetPostList(int page)
+        public List<Post> GetPostList(int page,int take)
         {
-            int take = Convert.ToInt32(ConfigurationManager.AppSettings["PostNum"]);
-
             int skip = (page - 1) * take;
 
             

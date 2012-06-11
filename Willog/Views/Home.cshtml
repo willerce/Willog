@@ -28,7 +28,7 @@
 							<div class="alignleft"><a href="/page/@(((int)Model.currentPage) - 1)">« Previous Entries</a></div>
 						}
 						</td>
-						<td width="auto" align="center"><strong class="fade">@((int)Model.currentPage)/1990</strong></td>
+						<td width="auto" align="center"><strong class="fade">@((int)Model.currentPage)/@Model.maxPage</strong></td>
 						<td width="120" align="right">
 						@if (@Model.hasNext)
 						{
