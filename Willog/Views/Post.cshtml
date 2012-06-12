@@ -7,7 +7,6 @@
 		<article id="post-entry" class="post block">
 			<div class="content">
 				<h1 class="t">@Model.Title</h1>
-				<div class="meta"><time>@Model.Created.ToString("D")</time></div>
 				<div class="entry">
 					@Html.Raw(Model.Content)
 				</div>
@@ -21,7 +20,37 @@
 		<div class="widget block">
 			<strong class="wt">About This Post</strong>
 			<div class="wc">
-			xxx
+				<p>@@ <time>@(((DateTime)Model.Created).ToString("D"))</time></p>
+				<p class="share">
+					<script type="text/javascript" charset="utf-8">
+						(function(){
+						  var _w = 90 , _h = 24;
+						  var param = {url:location.href,type:'2',count:'1',title:'',pic:'',ralateUid:'', rnd:new Date().valueOf()}
+						  var temp = [];
+						  for( var p in param ){
+							temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+						  }
+						  document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+						})()
+					</script>
+					<g:plusone></g:plusone>
+				</p>
+			</div>
+		</div>
+		<div class="widget block">
+			<div class="wc">
+				<strong>声明:</strong> 本文采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" rel="nofollow external"><abbr title="署名-非商业性使用-相同方式共享">BY-NC-SA</abbr></a> 协议进行授权。转载请注明转自：<a href="http://willerce.com/post/@Model.Slug">@Model.Title</a>
+			</div>
+		</div>
+		<div class="widget block">
+			<strong class="wt">Last Post</strong>
+			<div class="wc">
+				<ul>
+				@foreach(var post in Model.LastPost)
+				{
+					<li>›&nbsp;&nbsp;<a href="http://willerce.com/post/@post.Slug">@post.Title</a></Li>
+				}
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -34,3 +63,4 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>

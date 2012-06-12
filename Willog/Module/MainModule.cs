@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using MarkdownSharp;
 using Nancy;
 using Willog.Models;
@@ -14,10 +13,9 @@ namespace Willog.Module
         {
             Get["/"] = _ =>
             {
-                int take = Convert.ToInt32(ConfigurationManager.AppSettings["PostNum"]);
-                var postList = GetPostList(1,take);
+                var postList = GetPostList(1, 5);
 
-                var maxPage = DB.Post.All().ToList().Count / take;
+                var maxPage = GetMaxPage(5);
                 dynamic model = new
                 {
                     postList = (dynamic) postList,
@@ -32,11 +30,11 @@ namespace Willog.Module
 
             Get[@"/page/(?<id>[\d]{1,2})"] = _ =>
             {
-                int take = Convert.ToInt32(ConfigurationManager.AppSettings["PostNum"]);
+                
                 int page = (int) _.id;
 
-                var postList = GetPostList(page, take);
-                var maxPage = DB.Post.All().ToList().Count / take;
+                var postList = GetPostList(page, 5);
+                var maxPage = GetMaxPage(5);
 
                 dynamic model = new
                 {
@@ -52,8 +50,10 @@ namespace Willog.Module
 
             Get["/post/{slug}"] = _ =>
             {
-                var model = (Post)DB.Post.FindBySlug(_.slug);
+                var model = DB.Post.FindBySlug(_.slug);
+                var lastPostList = GetPostList(1, 5);
                 model.Content = new Markdown().Transform(model.Content);
+                model.LastPost = lastPostList;
                 return View["Post", model];
             };
 
@@ -71,10 +71,9 @@ namespace Willog.Module
         /// </summary>
         /// <param name="page"></param>
         /// <returns></returns>
-        public List<Post> GetPostList(int page,int take)
+        public List<Post> GetPostList(int page, int take)
         {
             int skip = (page - 1) * take;
-
             
             var postList = DB.Post.FindAll(DB.Post.Type == "post").OrderByCreatedDescending().Skip(skip).Take(take); ;
             postList = postList.ToList<Post>();
@@ -85,6 +84,17 @@ namespace Willog.Module
             }
 
             return postList;
+        }
+
+
+        public int GetMaxPage(int take)
+        {
+            double maxPage = DB.Post.All().ToList().Count / Convert.ToDouble(take);
+
+            if (maxPage > (int)maxPage)
+                maxPage++;
+
+            return (int)maxPage;
         }
     }
 }

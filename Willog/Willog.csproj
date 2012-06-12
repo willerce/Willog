@@ -73,24 +73,7 @@
     <Reference Include="Simple.Data.Mysql.Mysql40">
       <HintPath>..\packages\Simple.Data.Mysql.0.16.1.0\lib\net40\Simple.Data.Mysql.Mysql40.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.DynamicData">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web.Entity">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web.ApplicationServices">
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Web.Extensions">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>False</Private>
-      <HintPath>..\packages\Nancy.Viewengines.Razor.0.11.0\lib\net40\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web" />
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +120,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="Views\Admin\AdminHome.cshtml" />
+    <Content Include="Views\Home.cshtml">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
@@ -156,7 +142,6 @@
     <Content Include="Views\Admin\PostAdd.cshtml" />
     <Content Include="Views\Admin\PostEdit.cshtml" />
     <Content Include="Views\Admin\PostHome.cshtml" />
-    <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Post.cshtml" />
   </ItemGroup>
   <ItemGroup>
