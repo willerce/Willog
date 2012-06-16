@@ -16,10 +16,7 @@ namespace Willog.Module
         {
             this.RequiresAuthentication();
 
-            Get["/"] = _ =>
-            {
-                return View["AdminHome"];
-            };
+            Get["/"] = _ =>  View["AdminHome"];
 
             Get["/post"] = _ =>
             {

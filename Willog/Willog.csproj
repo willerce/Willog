@@ -75,6 +75,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Admin\Images\bg.gif" />
@@ -101,6 +103,7 @@
     <Content Include="Assets\Lib\Prettify\prettify.js" />
     <Content Include="Assets\Theme\Images\footersub.png" />
     <Content Include="Assets\Theme\Images\header.png" />
+    <Content Include="Assets\Theme\Images\icons.png" />
     <Content Include="Assets\Theme\Images\tile.gif" />
     <Content Include="Assets\Theme\Style.css" />
     <Content Include="robots.txt" />
@@ -123,6 +126,7 @@
     <Content Include="Views\Home.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Views\Feed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />

@@ -4,6 +4,9 @@ using MarkdownSharp;
 using Nancy;
 using Willog.Models;
 using Willog.Services;
+using System.Xml;
+using System.Xml.Linq;
+using System.Text;
 
 namespace Willog.Module
 {
@@ -64,6 +67,14 @@ namespace Willog.Module
                 model.Content = new Markdown().Transform(model.Content);
                 return View["Page", model];
             };
+
+            Get["/feed"] = _ =>
+            {
+                var markDown = new Markdown();
+                var list = GetPostList(1, 50);
+
+                return View["Feed",list];
+            };
         }
         
         /// <summary>
@@ -85,7 +96,6 @@ namespace Willog.Module
 
             return postList;
         }
-
 
         public int GetMaxPage(int take)
         {

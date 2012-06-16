@@ -63,7 +63,31 @@ a {
     overflow: hidden;
 }
 
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: text-top;
+    background-image: url("images/icons.png");
+    background-position: -16px -16px;
+    background-repeat: no-repeat;
+}
 
+.icon-feed {
+    background-position: -16px -16px;
+}
+
+.icon-weibo {
+    background-position: -48px -16px;
+}
+
+.sep5{
+	height: 5px;
+}
+.sep10 {
+	height: 10px;
+}
 /* header */
 #main-header {
     height: 48px;

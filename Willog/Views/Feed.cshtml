@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+<channel>  
+    <title>未志</title>  
+    <link>http://willerce.com</link>  
+    <description>Short description of the website. </description>  
+    @foreach (var post in @Model)
+    {
+        <item>
+            <title>@post.Title</title>
+            <link>http://willerce.com/post/@post.Slug</link>
+            <author>willerce</author>
+            <pubDate>@(((DateTime)post.Created).ToString("s"))</pubDate>
+            <description>@post.Content</description>
+        </item>   
+    }
+    </channel>  
+</rss>  
