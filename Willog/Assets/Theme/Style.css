@@ -8,6 +8,7 @@ body {
     line-height: 1.7;
 }
 
+
 h1, h2, h3, h4 {
     font-weight: 400;
     font-size: 24px;
@@ -215,9 +216,8 @@ a {
         padding: 0;
     }
 
-#comments h2.title {
-    font-size: 1.8em;
-    margin: 20px 0 30px 0;
+#comments h3 {
+    font-size: 1.5em;
 }
 
 .navigation {

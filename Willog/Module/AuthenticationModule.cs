@@ -38,8 +38,7 @@ namespace Willog.Module
             };
 
 
-
-            Post["/logout"] = _ =>
+            Get["/logout"] = _ =>
             {
                 return Response.AsRedirect("/login");
             };
