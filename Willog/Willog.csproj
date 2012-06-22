@@ -106,6 +106,7 @@
     <Content Include="Assets\Theme\Images\icons.png" />
     <Content Include="Assets\Theme\Images\tile.gif" />
     <Content Include="Assets\Theme\Style.css" />
+    <Content Include="favicon.ico" />
     <Content Include="robots.txt" />
     <Content Include="Views\Admin\Layout.cshtml" />
     <None Include="Properties\PublishProfiles\FileSystem-Desktop.pubxml" />

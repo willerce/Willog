@@ -1,25 +1,25 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"
-	xmlns:content="http://purl.org/rss/1.0/modules/content/"
-	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
-	xmlns:dc="http://purl.org/dc/elements/1.1/"
-	xmlns:atom="http://www.w3.org/2005/Atom"
-	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
-	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
-	>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
 <channel>  
-    <title>未志</title>  
-    <link>http://willerce.com</link>  
-    <description>Short description of the website. </description>  
+    <title>未志</title>
+    <link>http://willerce.com</link>
+    <description>Willerce Blog</description>
+    <language>zh-cn</language>
+	<managingEditor>willerce@gmail.com (Willerce Jen)</managingEditor>
+    <webMaster>willerce@gmail.com (Willerce Jen)</webMaster>
+    <generator>Willog</generator>
+    <pubDate>@(((DateTime)Model[0].Created).AddHours(-8).ToString("r"))</pubDate>
+    <lastBuildDate>@(((DateTime)Model[0].Created).ToString("r"))</lastBuildDate>
+    <ttl>60</ttl>
     @foreach (var post in @Model)
     {
         <item>
             <title>@post.Title</title>
             <link>http://willerce.com/post/@post.Slug</link>
             <author>willerce</author>
-            <pubDate>@(((DateTime)post.Created).ToString("s"))</pubDate>
+            <pubDate>@(((DateTime)post.Created).ToString("r"))</pubDate>
             <description>@post.Content</description>
-        </item>   
+        </item>
     }
-    </channel>  
-</rss>  
+    </channel>
+</rss>

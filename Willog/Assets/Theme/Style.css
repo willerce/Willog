@@ -271,7 +271,7 @@ pre {
     border: 1px solid rgba(0, 0, 0, 0.15);
     display: block;
     font-size: 12px;
-    line-height: 18px;
+    line-height: 1.5px;
     margin: 0 0 9px;
     padding: 8.5px;
     white-space: pre-wrap;

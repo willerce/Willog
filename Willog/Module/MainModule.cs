@@ -60,20 +60,19 @@ namespace Willog.Module
                 return View["Post", model];
             };
 
-
-            Get[@"/(?<page>[a-z]+)"] = _ =>
-            {
-                var model = DB.Post.FindBySlugAndType(_.page,"page");
-                model.Content = new Markdown().Transform(model.Content);
-                return View["Page", model];
-            };
-
             Get["/feed"] = _ =>
             {
                 var markDown = new Markdown();
-                var list = GetPostList(1, 50);
+                var list = GetPostList(1, 100);
 
-                return View["Feed",list];
+                return View["Feed", list].WithContentType("application/xml");
+            };
+
+            Get[@"/(?<page>[a-z]+)"] = _ =>
+            {
+                var model = DB.Post.FindBySlugAndType(_.page, "page");
+                model.Content = new Markdown().Transform(model.Content);
+                return View["Page", model];
             };
         }
         

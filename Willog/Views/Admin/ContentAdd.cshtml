@@ -25,7 +25,7 @@
                     <label class="field-header"><span>日期</span></label>
                     <div class="field-content">
                         <p>
-                            <input type="text" class="inputfield-maxwidth" name="created" value='@(DateTime.Now.ToString("yyyy-MM-dd hh:mm"))' />
+                            <input type="text" class="inputfield-maxwidth" name="created" value='@(DateTime.Now.ToUniversalTime().ToString("yyyy-MM-dd hh:mm"))' />
                         </p>
                     </div>
                 </li>
