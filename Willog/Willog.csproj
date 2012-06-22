@@ -143,9 +143,9 @@
     <Compile Include="Services\UserMapper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Admin\PostAdd.cshtml" />
-    <Content Include="Views\Admin\PostEdit.cshtml" />
-    <Content Include="Views\Admin\PostHome.cshtml" />
+    <Content Include="Views\Admin\ContentAdd.cshtml" />
+    <Content Include="Views\Admin\ContentEdit.cshtml" />
+    <Content Include="Views\Admin\ContentHome.cshtml" />
     <Content Include="Views\Post.cshtml" />
   </ItemGroup>
   <ItemGroup>

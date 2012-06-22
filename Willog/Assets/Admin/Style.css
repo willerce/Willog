@@ -26,15 +26,12 @@ input, textarea, button { font-family: "Microsoft Yahei"; }
 
 
 /* h*/
-#masthead { background: -moz-linear-gradient(center top , #4E676E 0%, #32464C 100%) repeat;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4E676E), color-stop(100%,#32464C));  height: 77px; overflow: hidden; }
+#masthead { background: -moz-linear-gradient(center top , #4E676E 0%, #32464C 100%) repeat;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4E676E), color-stop(100%,#32464C));  height: 43px; overflow: hidden; }
 #logo { display: none; }
 #topnav li { float: left; }
 #topnav a { background-position: 10px 12px; background-repeat: no-repeat; color: #A7E5F9; display: block; float: left; font-size: 12px; height: 41px; line-height: 38px; margin: 0 0 0 1px; padding: 0 10px; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6); text-transform: none; }
 a.nav, .nav a { font-weight: bold; text-transform: uppercase; }
 #topnav a.on, #topnav a:hover { background-color: #1E2D32; color: #FFFFFF; }
-#secondary { background-color: #E4EBEE; border-bottom: 1px solid #D1D8DA; display: block; height: 35px; left: 0; position: absolute; right: 0; top: 41px; }
-#breadcrumb li { color: #5197AE; display: inline; font-size: 11px; line-height: 1em; padding: 0 2px 0 0; }
-#breadcrumb a { color: #005F7D; display: inline-block; height: 36px; line-height: 34px; padding: 0 6px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
 
 
 /* content */
@@ -43,13 +40,14 @@ a.nav, .nav a { font-weight: bold; text-transform: uppercase; }
 .field.hide { display: none; }
 .field label { display: block; font-size: 12px; padding: 0.25em 0 0.25em 1em; }
 .field label span { text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
-.field-header { background: -moz-linear-gradient(center top , #EDEDED, #C4C4C4) repeat scroll 0 0 transparent; border: 1px solid #B6B6B6; color: #4F4F4F; font-weight: bold; }
+.field-header { background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#EDEDED), color-stop(100%,#C4C4C4));background: -moz-linear-gradient(center top , #EDEDED, #C4C4C4) repeat scroll 0 0 transparent; border: 1px solid #B6B6B6; color: #4F4F4F; font-weight: bold; }
 .field-content { padding: 1em; background: #FFFFFF; border: 1px solid #B6B6B6; color: #4F4F4F; }
 .field-content textarea, .inputfield-maxwidth { width: 99%; }
 .field-content textarea.large { height: 500px; line-height: 1.6em; padding: 3px 5px; }
 .field-content input, .field-content textarea, .field-content button { font-size: 14px; color: #333; }
 .field-content > p { margin-top: 0; }
-.button { padding: 3px 9px; cursor: pointer; display: inline-block; margin-right: 0.1em; overflow: visible; text-align: center; text-decoration: none !important; border-radius: 3px; background: -moz-linear-gradient(center top , #EDEDED, #C4C4C4) repeat;background: -webkit-gradient(linear,left bottom,left top,color-stop(1, rgb(185,224,245)),color-stop(0, rgb(146,189,214))) repeat; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset; border: 1px solid #B6B6B6; color: #4F4F4F; }
+.button { padding: 3px 9px; cursor: pointer; display: inline-block; margin-right: 0.1em; overflow: visible; text-align: center; text-decoration: none !important; border-radius: 3px; background: -moz-linear-gradient(center top , #EDEDED, #C4C4C4) repeat;background: -webkit-gradient(linear,left bottom,left top,color-stop(1, #EDEDED),color-stop(0, #C4C4C4)) repeat; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset; border: 1px solid #B6B6B6; color: #4F4F4F; }
+input.button { line-height: 1.4;}
 .button.right { float: right; }
 .button:hover { box-shadow: 0 0 8px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255,255,255,0.8) inset; }
 .button-text { display: block; font-size: 14px; font-weight: bold; line-height: 1.4; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6); }

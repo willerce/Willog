@@ -18,58 +18,38 @@ namespace Willog.Module
 
             Get["/"] = _ =>  View["AdminHome"];
 
-            Get["/post"] = _ =>
+            Get["/content/{type}/add"] = _ => View["ContentAdd"];
+
+            Post["/content/{type}/add"] = _ =>
             {
-                var currentPage = Request.Query.page.HasValue ? (int)Request.Query.page : 1;
-                var type = Request.Query.type.HasValue ? Request.Query.type+"" : "post";
-                var postList = GetPostList(currentPage, type);
-
-
-                dynamic model = new
-                {
-                    postList, 
-                    type, 
-                    currentPage,
-                    hasNext = true,
-                    hasPrevious = currentPage > 1
-                };
-
-                return View["PostHome", model];
-            };
-
-            Get["/post/add"] = _ => View["PostAdd"];
-
-            Post["/post/add"] = _ =>
-            {
-                string type = Request.Query.type.HasValue ? Request.Query.type + "" : "post";
                 var post = this.Bind<Post>("title", "slug","created","content");
-                post.Type = type;
+                post.Type = _.type;
                 post.Author = "willerce";
                 DB.Post.Insert(post);
 
-                return Response.AsRedirect("/admin/post?type=" + type);
+                return Response.AsRedirect("/admin/content/" + post.Type + "/");
             };
 
-            Get["/post/edit/{id}"] = _ =>
+            Get["/content/{type}/edit/{id}"] = _ =>
             {
                 var post = DB.Post.Get(_.id);
-                return View["PostEdit", post];
+                return View["cONTENTEdit", post];
             };
 
-            Post["/post/edit/{id}"] = _ =>
+            Post["/content/{type}/edit/{id}"] = _ =>
             {
                 var id = (int)_.id;
-                string type = Request.Query.type.HasValue ? Request.Query.type + "" : "post";
+                string type = _.type;
                 if(id!=0)
                 {
                     var post = this.Bind<Post>("title", "slug", "content", "created");
                     post.Type = type;
                     DB.Post.Update(post);
                 }
-                return Response.AsRedirect("/admin/post?type="+type);
+                return Response.AsRedirect("/admin/content/" + type);
             };
 
-            Get["/post/del/{id}"] = _ =>
+            Get["/content/{type}/del/{id}"] = _ =>
             {
                 var post = DB.Post.Get(_.id);
                 if (post == null)
@@ -77,8 +57,26 @@ namespace Willog.Module
                     return Response.AsRedirect("/admin");
                 }
                 DB.Post.DeleteById(post.Id);
-                return Response.AsRedirect("/admin/post?type=" + (string)post.Type);
+                return Response.AsRedirect("/admin/content/" + (string)post.Type);
       
+            };
+
+            Get["/content/{type}/"] = _ =>
+            {
+                var currentPage = Request.Query.page.HasValue ? (int)Request.Query.page : 1;
+                var type = _.type;
+                var postList = GetPostList(currentPage, type);
+
+                dynamic model = new
+                {
+                    postList,
+                    type,
+                    currentPage,
+                    hasNext = true,
+                    hasPrevious = currentPage > 1
+                };
+
+                return View["ContentHome", model];
             };
 
             #region Convert Wp to willog
