@@ -63,7 +63,7 @@ namespace Willog.Module
             Get["/feed"] = _ =>
             {
                 var markDown = new Markdown();
-                var list = GetPostList(1, 100);
+                var list = GetPostList(1, 15);
 
                 return View["Feed", list].WithContentType("application/xml");
             };
